@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+// JavaScript function to toggle section visibility
+function toggleSection(sectionId) {
+var sections = document.querySelectorAll('main section');
+sections.forEach(function(section) {
+section.style.display = 'none';
+});
+var selectedSection = document.getElementById(sectionId);
+selectedSection.style.display = 'block';
+}
+</script>
+</head>
+<body>
+
+<nav>
+<ul>
+
+<li><a href="HTMLElements.html" onclick="toggleSection('HTML Elements')">HTML Elements</a></li>
+
+<li><a href="JavaConcepts.html" onclick="toggleSection('Java  Concepts')">Java Concepts</a></li>
+
+<li><a href="Review.html" onclick="toggleSection('Review')">Review</a></li>
+
+<li><a href="vue.html" onclick="toggleSection('Vue Features')">Vue Features</a></li>
+
+
+</ul>
+</nav>
+<header>
+    <h1>SIT 120 Final Assesment</h1>
+    </header>
+<main>
+    <img src="cover-Vue.js.png" alt="Image 1" class ="centre" style="border: 8px solid rgba(238, 194, 208, 0.648); float: centre ;">
+
+    <section id="HTMLElements">
+        <h2>Home Page</h2>
+        <p>This website will run you through everything that we have learnt in SIT120. It covers the orignial HTML elements and concepts we learnt in our first task and first outcomes. Then, the website encorporates the Java concepts tought in task 1.2 and thoroughly handles user inputs, HTML elements such as Tables, Form Elements, Headers, Favicon. It also includes a responsive layout adjusting to the users needs and requirements such as clear writing and a robust website design. Lastly, vue has been encorperated within the website also.</p>
+        </section>
+        
+  
+        <div id="app">
+            <div v-if="showMessage">
+                <h2>Please feel free to direct yourself to  google, my github repository or even the deakin.edu website!</h2>
+            </div>
+        
+            <div>
+                <h3>Links:</h3>
+                <ul>
+                    <li v-for="link in links">
+                        <a :href="link.url">{{ link.text }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    showMessage: true, 
+                    links: [ 
+                        { text: 'Google', url: 'https://www.google.com/' },
+                        { text: 'GitHub', url: 'https://github.com/DanielTownleyyy/SIT120' },
+                        { text: 'Deakin', url: 'https://www.deakin.edu.au' }
+                    ]
+                }
+            });
+        </script>
+        
+
+</main>
+</body>
+</html>
